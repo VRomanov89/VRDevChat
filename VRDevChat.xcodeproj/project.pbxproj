@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E6E862A0E49FF418E953698 /* Pods_VRDevChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA704CA8D8CE17BF884A08EA /* Pods_VRDevChat.framework */; };
 		6305DBF51D6C06000043F7EA /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305DBF21D6C06000043F7EA /* AAPLPreviewView.m */; };
 		6305DBF61D6C06000043F7EA /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305DBF41D6C06000043F7EA /* AAPLCameraViewController.m */; };
+		634434061D6D0B21000CE199 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634434051D6D0B21000CE199 /* GoogleService-Info.plist */; };
 		63FA55B21D6C033F0032D870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA55B11D6C033F0032D870 /* AppDelegate.swift */; };
 		63FA55B41D6C033F0032D870 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA55B31D6C033F0032D870 /* CameraVC.swift */; };
 		63FA55B71D6C033F0032D870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FA55B51D6C033F0032D870 /* Main.storyboard */; };
@@ -17,12 +19,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A304CBE9756B74363AFAA57 /* Pods-VRDevChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRDevChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-VRDevChat/Pods-VRDevChat.release.xcconfig"; sourceTree = "<group>"; };
 		6305DBF01D6C06000043F7EA /* VRDevChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VRDevChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		6305DBF11D6C06000043F7EA /* AAPLPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPreviewView.h; sourceTree = "<group>"; };
 		6305DBF21D6C06000043F7EA /* AAPLPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPreviewView.m; sourceTree = "<group>"; };
 		6305DBF31D6C06000043F7EA /* AAPLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraViewController.h; sourceTree = "<group>"; };
 		6305DBF41D6C06000043F7EA /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
 		6305DBFC1D6C1C3D0043F7EA /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
+		634434051D6D0B21000CE199 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63FA55AE1D6C033F0032D870 /* VRDevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRDevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FA55B11D6C033F0032D870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FA55B31D6C033F0032D870 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		63FA55B81D6C033F0032D870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FA55BB1D6C033F0032D870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63FA55BD1D6C033F0032D870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA704CA8D8CE17BF884A08EA /* Pods_VRDevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VRDevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE535D1889719ACCA277380C /* Pods-VRDevChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRDevChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VRDevChat/Pods-VRDevChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +43,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6E862A0E49FF418E953698 /* Pods_VRDevChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4046CB26B12B8F63C7D0AB7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE535D1889719ACCA277380C /* Pods-VRDevChat.debug.xcconfig */,
+				1A304CBE9756B74363AFAA57 /* Pods-VRDevChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6305DBF71D6C06080043F7EA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +91,8 @@
 			children = (
 				63FA55B01D6C033F0032D870 /* VRDevChat */,
 				63FA55AF1D6C033F0032D870 /* Products */,
+				4046CB26B12B8F63C7D0AB7C /* Pods */,
+				AF9760FE5357BCFC77FE94D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +115,18 @@
 				63FA55B81D6C033F0032D870 /* Assets.xcassets */,
 				63FA55BA1D6C033F0032D870 /* LaunchScreen.storyboard */,
 				63FA55BD1D6C033F0032D870 /* Info.plist */,
+				634434051D6D0B21000CE199 /* GoogleService-Info.plist */,
 				6305DBF01D6C06000043F7EA /* VRDevChat-Bridging-Header.h */,
 			);
 			path = VRDevChat;
+			sourceTree = "<group>";
+		};
+		AF9760FE5357BCFC77FE94D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA704CA8D8CE17BF884A08EA /* Pods_VRDevChat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63FA55C01D6C033F0032D870 /* Build configuration list for PBXNativeTarget "VRDevChat" */;
 			buildPhases = (
+				EAC01A7AA0C908198BC528BB /* Check Pods Manifest.lock */,
 				63FA55AA1D6C033F0032D870 /* Sources */,
 				63FA55AB1D6C033F0032D870 /* Frameworks */,
 				63FA55AC1D6C033F0032D870 /* Resources */,
+				12E44CED6D6861D224B9DD6E /* Embed Pods Frameworks */,
+				36FD23C0402B9C756D6DD4AE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,12 +194,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FA55BC1D6C033F0032D870 /* LaunchScreen.storyboard in Resources */,
+				634434061D6D0B21000CE199 /* GoogleService-Info.plist in Resources */,
 				63FA55B91D6C033F0032D870 /* Assets.xcassets in Resources */,
 				63FA55B71D6C033F0032D870 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12E44CED6D6861D224B9DD6E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VRDevChat/Pods-VRDevChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36FD23C0402B9C756D6DD4AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VRDevChat/Pods-VRDevChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAC01A7AA0C908198BC528BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63FA55AA1D6C033F0032D870 /* Sources */ = {
@@ -300,6 +379,7 @@
 		};
 		63FA55C11D6C033F0032D870 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE535D1889719ACCA277380C /* Pods-VRDevChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -317,6 +397,7 @@
 		};
 		63FA55C21D6C033F0032D870 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A304CBE9756B74363AFAA57 /* Pods-VRDevChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
