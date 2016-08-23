@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,11 +16,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSX-xJ-bFf" userLabel="PreviewView" customClass="AAPLPreviewView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-a2-dPj">
+                                <items>
+                                    <barButtonItem image="camera_icon_snap" id="7aE-gb-TaU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AW0-fs-QiQ"/>
+                                    <barButtonItem image="createsnap_btn" id="Sms-1L-BnZ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AtV-uZ-d1c"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7sE-a2-dPj" secondAttribute="bottom" id="74J-Nf-nH0"/>
+                            <constraint firstItem="MSX-xJ-bFf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CvO-F0-R5d"/>
+                            <constraint firstAttribute="trailing" secondItem="7sE-a2-dPj" secondAttribute="trailing" id="MZ0-a4-UQf"/>
+                            <constraint firstItem="7sE-a2-dPj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eOi-bJ-AAL"/>
+                            <constraint firstAttribute="trailing" secondItem="MSX-xJ-bFf" secondAttribute="trailing" id="jw5-cN-PYW"/>
+                            <constraint firstItem="7sE-a2-dPj" firstAttribute="top" secondItem="MSX-xJ-bFf" secondAttribute="bottom" id="m4U-Gm-vNT"/>
+                            <constraint firstItem="MSX-xJ-bFf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qNi-Y3-2v4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="MSX-xJ-bFf" id="pOA-Ld-bX5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera_icon_snap" width="29" height="24"/>
+        <image name="createsnap_btn" width="30" height="30"/>
+    </resources>
 </document>
