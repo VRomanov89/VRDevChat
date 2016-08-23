@@ -22,6 +22,7 @@
 		6305DBF21D6C06000043F7EA /* AAPLPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPreviewView.m; sourceTree = "<group>"; };
 		6305DBF31D6C06000043F7EA /* AAPLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraViewController.h; sourceTree = "<group>"; };
 		6305DBF41D6C06000043F7EA /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
+		6305DBFC1D6C1C3D0043F7EA /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
 		63FA55AE1D6C033F0032D870 /* VRDevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRDevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FA55B11D6C033F0032D870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FA55B31D6C033F0032D870 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -61,6 +62,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		6305DBF91D6C1B5B0043F7EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6305DBFC1D6C1C3D0043F7EA /* AAPLCameraVCDelegate.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		63FA55A51D6C033E0032D870 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +89,7 @@
 		63FA55B01D6C033F0032D870 /* VRDevChat */ = {
 			isa = PBXGroup;
 			children = (
+				6305DBF91D6C1B5B0043F7EA /* Protocols */,
 				6305DBF81D6C060D0043F7EA /* Controller */,
 				6305DBF71D6C06080043F7EA /* View */,
 				63FA55B11D6C033F0032D870 /* AppDelegate.swift */,

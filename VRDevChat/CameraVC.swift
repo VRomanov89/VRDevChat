@@ -9,6 +9,14 @@
 import UIKit
 
 class CameraVC: AAPLCameraViewController {
+    @IBAction func recordButton(_ sender: UIBarButtonItem) {
+        toggleMovieRecording()
+    }
+    
+    @IBAction func cameraButton(_ sender: UIBarButtonItem) {
+        changeCamera()
+    }
+    
     @IBOutlet weak var previewView: AAPLPreviewView!
 
     override func viewDidLoad() {
@@ -17,5 +25,7 @@ class CameraVC: AAPLCameraViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
     }
+    
+    
 }
 

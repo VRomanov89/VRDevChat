@@ -22,9 +22,17 @@
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-a2-dPj">
                                 <items>
-                                    <barButtonItem image="camera_icon_snap" id="7aE-gb-TaU"/>
+                                    <barButtonItem image="camera_icon_snap" id="7aE-gb-TaU">
+                                        <connections>
+                                            <action selector="cameraButton:" destination="BYZ-38-t0r" id="JcF-MM-NtS"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AW0-fs-QiQ"/>
-                                    <barButtonItem image="createsnap_btn" id="Sms-1L-BnZ"/>
+                                    <barButtonItem image="createsnap_btn" id="Sms-1L-BnZ">
+                                        <connections>
+                                            <action selector="recordButton:" destination="BYZ-38-t0r" id="e60-Xl-Fcf"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AtV-uZ-d1c"/>
                                 </items>
                             </toolbar>
