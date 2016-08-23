@@ -8,22 +8,43 @@
 
 import UIKit
 
-class CameraVC: AAPLCameraViewController {
+class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     @IBAction func recordButton(_ sender: UIBarButtonItem) {
         toggleMovieRecording()
     }
+    @IBOutlet weak var recordButton: UIBarButtonItem!
     
     @IBAction func cameraButton(_ sender: UIBarButtonItem) {
         changeCamera()
     }
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     @IBOutlet weak var previewView: AAPLPreviewView!
 
     override func viewDidLoad() {
+        delegate = self
         self._previewView = previewView
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    
+    func shouldEnableCameraUI(_ enable: Bool) {
+        cameraButton.isEnabled = enable
+        print("Camera UI")
+    }
+    
+    func shouldEnableRecordUI(_ enable: Bool) {
+        recordButton.isEnabled = enable
+        print("record UI")
+    }
+    
+    func recordingHasStarted() {
+        print("recording started")
+    }
+    
+    func canStartRecording() {
+        print("can start recording")
     }
     
     
