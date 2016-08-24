@@ -18,8 +18,14 @@ class LoginVC: UIViewController {
     @IBAction func loginButton(_ sender: RoundButton) {
         if let email = emailField.text, let pass = passField.text , email.characters.count > 0 && pass.characters.count > 0 {
             // Call the login service. (MODEL)
-            AuthService.instance.login(email: email, pass: pass, onComplete: { (errMst, data) in
-                
+            AuthService.instance.login(email: email, pass: pass, onComplete: { (errMsg, data) in
+                guard errMsg == nil else {
+                    let alert = UIAlertController(title: "error Authentication", message: errMsg, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                self.dismiss(animated: true, completion: nil)
             })
             
         } else {

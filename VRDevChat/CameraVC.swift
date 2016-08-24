@@ -32,11 +32,12 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard FIRAuth.auth()?.currentUser != nil else {
+        performSegue(withIdentifier: "loginVC", sender: nil)
+        /*guard FIRAuth.auth()?.currentUser != nil else {
             //load login VC
             performSegue(withIdentifier: "loginVC", sender: nil)
             return
-        }
+        }*/
     }
     
     func shouldEnableCameraUI(_ enable: Bool) {

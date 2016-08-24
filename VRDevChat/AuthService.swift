@@ -26,14 +26,17 @@ class AuthService {
                         FIRAuth.auth()?.createUser(withEmail: email, password: pass, completion: { (user, error) in
                             if error != nil {
                                 //Show error to user
+                                self.handleFirebaseError(error: error as! NSError, onComplete: onComplete)
                             } else {
                                 if user?.uid != nil {
                                     //Sign In
                                     FIRAuth.auth()?.signIn(withEmail: email, password: pass, completion: { (user, error) in
                                         if error != nil {
                                             //Show error to user
+                                            self.handleFirebaseError(error: error as! NSError, onComplete: onComplete)
                                         } else {
                                             //Logged in
+                                            onComplete?(nil, user)
                                         }
                                     })
                                 }
@@ -42,9 +45,11 @@ class AuthService {
                     }
                 } else {
                     //Handle all other errors
+                    self.handleFirebaseError(error: error as! NSError, onComplete: onComplete)
                 }
             } else {
                 //Successfully logged in
+                onComplete?(nil, user)
             }
         })
     }
@@ -57,8 +62,12 @@ class AuthService {
                 onComplete?("Invalid emaila ddress.", nil)
             case .errorCodeWrongPassword:
                 onComplete?("Wrong password.", nil)
+            case .errorCodeEmailAlreadyInUse:
+                onComplete?("Email already in use.", nil)
+            case .errorCodeAccountExistsWithDifferentCredential:
+                onComplete?("Email already in use.", nil)
             default:
-                onComplete?("don't know what the issue was, try again.", nil)
+                onComplete?("Don't know what the issue was, try again.", nil)
             }
         }
     }
