@@ -10,7 +10,9 @@
 		5E6E862A0E49FF418E953698 /* Pods_VRDevChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA704CA8D8CE17BF884A08EA /* Pods_VRDevChat.framework */; };
 		6305DBF51D6C06000043F7EA /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305DBF21D6C06000043F7EA /* AAPLPreviewView.m */; };
 		6305DBF61D6C06000043F7EA /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305DBF41D6C06000043F7EA /* AAPLCameraViewController.m */; };
-		634434061D6D0B21000CE199 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634434051D6D0B21000CE199 /* GoogleService-Info.plist */; };
+		634434081D6E1F0B000CE199 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634434071D6E1F0B000CE199 /* GoogleService-Info.plist */; };
+		6344340B1D6E25B8000CE199 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344340A1D6E25B8000CE199 /* RoundTextField.swift */; };
+		6344340D1D6E29AB000CE199 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344340C1D6E29AB000CE199 /* RoundButton.swift */; };
 		63FA55B21D6C033F0032D870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA55B11D6C033F0032D870 /* AppDelegate.swift */; };
 		63FA55B41D6C033F0032D870 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA55B31D6C033F0032D870 /* CameraVC.swift */; };
 		63FA55B71D6C033F0032D870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FA55B51D6C033F0032D870 /* Main.storyboard */; };
@@ -26,7 +28,9 @@
 		6305DBF31D6C06000043F7EA /* AAPLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraViewController.h; sourceTree = "<group>"; };
 		6305DBF41D6C06000043F7EA /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
 		6305DBFC1D6C1C3D0043F7EA /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
-		634434051D6D0B21000CE199 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		634434071D6E1F0B000CE199 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6344340A1D6E25B8000CE199 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
+		6344340C1D6E29AB000CE199 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		63FA55AE1D6C033F0032D870 /* VRDevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRDevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FA55B11D6C033F0032D870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FA55B31D6C033F0032D870 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 			children = (
 				6305DBF11D6C06000043F7EA /* AAPLPreviewView.h */,
 				6305DBF21D6C06000043F7EA /* AAPLPreviewView.m */,
+				6344340A1D6E25B8000CE199 /* RoundTextField.swift */,
+				6344340C1D6E29AB000CE199 /* RoundButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -84,6 +90,19 @@
 				6305DBFC1D6C1C3D0043F7EA /* AAPLCameraVCDelegate.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		634434091D6E2296000CE199 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63FA55B11D6C033F0032D870 /* AppDelegate.swift */,
+				63FA55B81D6C033F0032D870 /* Assets.xcassets */,
+				63FA55BA1D6C033F0032D870 /* LaunchScreen.storyboard */,
+				63FA55BD1D6C033F0032D870 /* Info.plist */,
+				634434071D6E1F0B000CE199 /* GoogleService-Info.plist */,
+				6305DBF01D6C06000043F7EA /* VRDevChat-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		63FA55A51D6C033E0032D870 = {
@@ -107,16 +126,11 @@
 		63FA55B01D6C033F0032D870 /* VRDevChat */ = {
 			isa = PBXGroup;
 			children = (
+				634434091D6E2296000CE199 /* Supporting Files */,
 				6305DBF91D6C1B5B0043F7EA /* Protocols */,
 				6305DBF81D6C060D0043F7EA /* Controller */,
 				6305DBF71D6C06080043F7EA /* View */,
-				63FA55B11D6C033F0032D870 /* AppDelegate.swift */,
 				63FA55B51D6C033F0032D870 /* Main.storyboard */,
-				63FA55B81D6C033F0032D870 /* Assets.xcassets */,
-				63FA55BA1D6C033F0032D870 /* LaunchScreen.storyboard */,
-				63FA55BD1D6C033F0032D870 /* Info.plist */,
-				634434051D6D0B21000CE199 /* GoogleService-Info.plist */,
-				6305DBF01D6C06000043F7EA /* VRDevChat-Bridging-Header.h */,
 			);
 			path = VRDevChat;
 			sourceTree = "<group>";
@@ -194,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FA55BC1D6C033F0032D870 /* LaunchScreen.storyboard in Resources */,
-				634434061D6D0B21000CE199 /* GoogleService-Info.plist in Resources */,
+				634434081D6E1F0B000CE199 /* GoogleService-Info.plist in Resources */,
 				63FA55B91D6C033F0032D870 /* Assets.xcassets in Resources */,
 				63FA55B71D6C033F0032D870 /* Main.storyboard in Resources */,
 			);
@@ -255,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6344340D1D6E29AB000CE199 /* RoundButton.swift in Sources */,
 				63FA55B41D6C033F0032D870 /* CameraVC.swift in Sources */,
 				63FA55B21D6C033F0032D870 /* AppDelegate.swift in Sources */,
+				6344340B1D6E25B8000CE199 /* RoundTextField.swift in Sources */,
 				6305DBF51D6C06000043F7EA /* AAPLPreviewView.m in Sources */,
 				6305DBF61D6C06000043F7EA /* AAPLCameraViewController.m in Sources */,
 			);
