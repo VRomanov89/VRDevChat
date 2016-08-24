@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="49e-ZD-dfe">
             <objects>
-                <viewController id="Cp9-BA-FCr" sceneMemberID="viewController">
+                <viewController id="Cp9-BA-FCr" customClass="LoginVC" customModule="VRDevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="42H-AM-4HP"/>
                         <viewControllerLayoutGuide type="bottom" id="fbr-SD-k1Q"/>
@@ -170,6 +170,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="Cp9-BA-FCr" eventType="touchUpInside" id="HYB-fN-Pim"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,6 +195,10 @@
                             <constraint firstItem="fbr-SD-k1Q" firstAttribute="top" secondItem="igE-Iy-yGb" secondAttribute="bottom" id="vr5-6v-d2v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="sao-z4-QOZ" id="als-yE-DGF"/>
+                        <outlet property="passField" destination="bEv-ca-Rkr" id="NA7-NA-aV3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ef-BA-Csn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
