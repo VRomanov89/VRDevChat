@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E8DB60D4890CC5D6AF4DFA4D'
+               BlueprintIdentifier = 'B76AA37A83ABA405CB3CA616'
                BlueprintName = 'Pods-VRDevChat'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_VRDevChat.framework'>

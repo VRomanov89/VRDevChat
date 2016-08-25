@@ -15,6 +15,10 @@
 		6344340D1D6E29AB000CE199 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344340C1D6E29AB000CE199 /* RoundButton.swift */; };
 		6344340F1D6E3088000CE199 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344340E1D6E3088000CE199 /* LoginVC.swift */; };
 		634434121D6E339C000CE199 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634434111D6E339C000CE199 /* AuthService.swift */; };
+		63EAB90B1D6E5B250089EC7C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EAB90A1D6E5B250089EC7C /* DataService.swift */; };
+		63EAB90D1D6E5D560089EC7C /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EAB90C1D6E5D560089EC7C /* UserVC.swift */; };
+		63EAB90F1D6E5DDD0089EC7C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EAB90E1D6E5DDD0089EC7C /* UserCell.swift */; };
+		63EAB9121D6E607E0089EC7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EAB9111D6E607E0089EC7C /* User.swift */; };
 		63FA55B21D6C033F0032D870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA55B11D6C033F0032D870 /* AppDelegate.swift */; };
 		63FA55B41D6C033F0032D870 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA55B31D6C033F0032D870 /* CameraVC.swift */; };
 		63FA55B71D6C033F0032D870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FA55B51D6C033F0032D870 /* Main.storyboard */; };
@@ -35,6 +39,10 @@
 		6344340C1D6E29AB000CE199 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		6344340E1D6E3088000CE199 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		634434111D6E339C000CE199 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		63EAB90A1D6E5B250089EC7C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		63EAB90C1D6E5D560089EC7C /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
+		63EAB90E1D6E5DDD0089EC7C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		63EAB9111D6E607E0089EC7C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		63FA55AE1D6C033F0032D870 /* VRDevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRDevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FA55B11D6C033F0032D870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FA55B31D6C033F0032D870 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 				6305DBF21D6C06000043F7EA /* AAPLPreviewView.m */,
 				6344340A1D6E25B8000CE199 /* RoundTextField.swift */,
 				6344340C1D6E29AB000CE199 /* RoundButton.swift */,
+				63EAB90E1D6E5DDD0089EC7C /* UserCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -85,6 +94,7 @@
 				6305DBF41D6C06000043F7EA /* AAPLCameraViewController.m */,
 				63FA55B31D6C033F0032D870 /* CameraVC.swift */,
 				6344340E1D6E3088000CE199 /* LoginVC.swift */,
+				63EAB90C1D6E5D560089EC7C /* UserVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -114,8 +124,17 @@
 			isa = PBXGroup;
 			children = (
 				634434111D6E339C000CE199 /* AuthService.swift */,
+				63EAB90A1D6E5B250089EC7C /* DataService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		63EAB9101D6E60730089EC7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63EAB9111D6E607E0089EC7C /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		63FA55A51D6C033E0032D870 = {
@@ -139,6 +158,7 @@
 		63FA55B01D6C033F0032D870 /* VRDevChat */ = {
 			isa = PBXGroup;
 			children = (
+				63EAB9101D6E60730089EC7C /* Model */,
 				634434101D6E338B000CE199 /* Services */,
 				634434091D6E2296000CE199 /* Supporting Files */,
 				6305DBF91D6C1B5B0043F7EA /* Protocols */,
@@ -283,13 +303,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63EAB90B1D6E5B250089EC7C /* DataService.swift in Sources */,
+				63EAB90D1D6E5D560089EC7C /* UserVC.swift in Sources */,
 				6344340D1D6E29AB000CE199 /* RoundButton.swift in Sources */,
 				634434121D6E339C000CE199 /* AuthService.swift in Sources */,
 				63FA55B41D6C033F0032D870 /* CameraVC.swift in Sources */,
 				6344340F1D6E3088000CE199 /* LoginVC.swift in Sources */,
 				63FA55B21D6C033F0032D870 /* AppDelegate.swift in Sources */,
 				6344340B1D6E25B8000CE199 /* RoundTextField.swift in Sources */,
+				63EAB9121D6E607E0089EC7C /* User.swift in Sources */,
 				6305DBF51D6C06000043F7EA /* AAPLPreviewView.m in Sources */,
+				63EAB90F1D6E5DDD0089EC7C /* UserCell.swift in Sources */,
 				6305DBF61D6C06000043F7EA /* AAPLCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
