@@ -32,12 +32,12 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: "loginVC", sender: nil)
-        /*guard FIRAuth.auth()?.currentUser != nil else {
+        //performSegue(withIdentifier: "loginVC", sender: nil)
+        guard FIRAuth.auth()?.currentUser != nil else {
             //load login VC
             performSegue(withIdentifier: "loginVC", sender: nil)
             return
-        }*/
+        }
     }
     
     func shouldEnableCameraUI(_ enable: Bool) {
@@ -78,7 +78,10 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
         if let usersVC = segue.destination as? UserVC {
             if let videoDict = sender as? Dictionary<String, URL> {
                 let url = videoDict["videoURL"]
-                
+                usersVC.videoURL = url
+            } else if let snapDict = sender as? Dictionary<String, Data> {
+                let snapData = snapDict["snapshotData"]
+                usersVC.snapData = snapData
             }
         }
     }

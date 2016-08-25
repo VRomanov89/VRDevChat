@@ -9,24 +9,49 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendPRButton: UIBarButtonItem!
     @IBAction func sendPRButtonPressed(_ sender: UIBarButtonItem) {
+        //Firebase upload
+        if let url = _videoURL {
+            let videoName = "\(NSUUID().uuidString)\(url)"
+            let ref = DataService.instance.videosStorageRef.child(videoName)
+            
+            let task = ref.putFile(url, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
+                if err != nil {
+                    print("Got an error uploading: \(err?.localizedDescription)")
+                } else {
+                    let downloadURL = meta!.downloadURL()
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        } else if let snap = _snapData {
+            let ref = DataService.instance.imagesStorageRef.child("\(NSUUID().uuidString).jpg")
+            let task = ref.put(snap, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
+                if err != nil {
+                    print("Got an error uploading: \(err?.localizedDescription)")
+                } else {
+                    let downloadURL = meta!.downloadURL()
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        }
     }
     
     private var users = [User]()
     private var selectedUsers = Dictionary<String, User>()
     
-    private var _imageData: Data?
+    private var _snapData: Data?
     private var _videoURL: URL?
     
-    var imageData: Data? {
+    var snapData: Data? {
         set {
-            _imageData = newValue
+            _snapData = newValue
         } get {
-            return _imageData
+            return _snapData
         }
     }
     
@@ -43,6 +68,8 @@ class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
         
         DataService.instance.usersRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             //print("Snap: \(snapshot.debugDescription)")
@@ -77,6 +104,7 @@ class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.setCheckmark(selected: true)
         let user = users[indexPath.row]
         selectedUsers[user.uid] = user
+        navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -84,6 +112,10 @@ class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.setCheckmark(selected: false)
         let user = users[indexPath.row]
         selectedUsers[user.uid] = nil
+        
+        if selectedUsers.count  <= 0 {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
