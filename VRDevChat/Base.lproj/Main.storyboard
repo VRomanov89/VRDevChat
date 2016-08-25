@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GSm-c2-evO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -54,6 +54,7 @@
                         <outlet property="previewView" destination="MSX-xJ-bFf" id="pOA-Ld-bX5"/>
                         <outlet property="recordButton" destination="Sms-1L-BnZ" id="SZb-zF-mvE"/>
                         <segue destination="Cp9-BA-FCr" kind="presentation" identifier="loginVC" id="v9B-7a-rPM"/>
+                        <segue destination="GSm-c2-evO" kind="show" identifier="UsersVC" id="QQi-m3-Au5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -217,6 +218,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1KP-Yt-XZI">
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SO4-yE-reb">
+                                <items>
+                                    <navigationItem title="Send a pull request" id="DJU-dz-2q0">
+                                        <barButtonItem key="rightBarButtonItem" image="send_snap" id="DXN-vr-CQ5">
+                                            <connections>
+                                                <action selector="sendPRButtonPressed:" destination="GSm-c2-evO" id="Z8B-Mu-IPg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tSK-z3-4Fx">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -224,7 +239,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QuF-bT-sw6" id="8bf-1T-xa8">
-                                            <frame key="frameInset" width="375" height="53"/>
+                                            <frame key="frameInset" width="375" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csg-21-Y67">
@@ -248,32 +263,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1KP-Yt-XZI">
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1KP-Yt-XZI" secondAttribute="trailing" id="2mO-dO-V8L"/>
+                            <constraint firstItem="SO4-yE-reb" firstAttribute="top" secondItem="cY0-wu-Nfb" secondAttribute="top" constant="20" id="3Cj-FX-EsT"/>
+                            <constraint firstItem="1KP-Yt-XZI" firstAttribute="top" secondItem="SO4-yE-reb" secondAttribute="bottom" id="68S-3W-wN8"/>
                             <constraint firstItem="tSK-z3-4Fx" firstAttribute="bottom" secondItem="oJ4-Az-Y8i" secondAttribute="top" id="Bmg-zC-eyT"/>
                             <constraint firstAttribute="trailing" secondItem="tSK-z3-4Fx" secondAttribute="trailing" id="Ek0-VK-EiF"/>
                             <constraint firstItem="tSK-z3-4Fx" firstAttribute="top" secondItem="1KP-Yt-XZI" secondAttribute="bottom" id="JPE-IC-E6n"/>
                             <constraint firstItem="1KP-Yt-XZI" firstAttribute="leading" secondItem="cY0-wu-Nfb" secondAttribute="leading" id="P2x-IU-bhc"/>
                             <constraint firstAttribute="trailing" secondItem="tSK-z3-4Fx" secondAttribute="trailing" id="VEE-fJ-yqq"/>
+                            <constraint firstItem="1KP-Yt-XZI" firstAttribute="top" secondItem="SO4-yE-reb" secondAttribute="bottom" id="VoZ-lj-pMR"/>
                             <constraint firstItem="tSK-z3-4Fx" firstAttribute="top" secondItem="1KP-Yt-XZI" secondAttribute="bottom" id="Z3q-V6-EYQ"/>
                             <constraint firstItem="tSK-z3-4Fx" firstAttribute="leading" secondItem="cY0-wu-Nfb" secondAttribute="leading" id="gEG-bD-qzA"/>
-                            <constraint firstItem="1KP-Yt-XZI" firstAttribute="top" secondItem="cY0-wu-Nfb" secondAttribute="top" id="k8L-gr-5T6"/>
                             <constraint firstItem="oJ4-Az-Y8i" firstAttribute="top" secondItem="tSK-z3-4Fx" secondAttribute="bottom" id="rOq-hH-Ozm"/>
+                            <constraint firstAttribute="trailing" secondItem="SO4-yE-reb" secondAttribute="trailing" id="uGK-t2-si7"/>
                             <constraint firstItem="tSK-z3-4Fx" firstAttribute="leading" secondItem="cY0-wu-Nfb" secondAttribute="leading" id="vAr-dO-P0s"/>
+                            <constraint firstItem="SO4-yE-reb" firstAttribute="leading" secondItem="cY0-wu-Nfb" secondAttribute="leading" id="vXs-fk-rQe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sendPRButton" destination="DXN-vr-CQ5" id="Yf5-0H-C1c"/>
                         <outlet property="tableView" destination="tSK-z3-4Fx" id="iTO-k2-aP6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0C-Tp-lmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965.5999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="116" y="-588.75562218890559"/>
         </scene>
     </scenes>
     <resources>
@@ -281,5 +298,6 @@
         <image name="createsnap_btn" width="30" height="30"/>
         <image name="eeenthusiast_logo" width="114" height="112"/>
         <image name="programmer-coding-scripts-automation-hacking" width="1920" height="1080"/>
+        <image name="send_snap" width="24" height="23"/>
     </resources>
 </document>

@@ -12,9 +12,31 @@ import FirebaseDatabase
 
 class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendPRButton: UIBarButtonItem!
+    @IBAction func sendPRButtonPressed(_ sender: UIBarButtonItem) {
+    }
     
     private var users = [User]()
     private var selectedUsers = Dictionary<String, User>()
+    
+    private var _imageData: Data?
+    private var _videoURL: URL?
+    
+    var imageData: Data? {
+        set {
+            _imageData = newValue
+        } get {
+            return _imageData
+        }
+    }
+    
+    var videoURL: URL? {
+        set {
+            _videoURL = newValue
+        } get {
+            return _videoURL
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
