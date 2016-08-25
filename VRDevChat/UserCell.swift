@@ -13,6 +13,7 @@ class UserCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setCheckmark(selected: false)
     }
     
     func updateUI(user: User) {
