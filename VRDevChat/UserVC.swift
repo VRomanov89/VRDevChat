@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -20,24 +21,29 @@ class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let videoName = "\(NSUUID().uuidString)\(url)"
             let ref = DataService.instance.videosStorageRef.child(videoName)
             
-            let task = ref.putFile(url, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
+            _ = ref.putFile(url, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
                 if err != nil {
                     print("Got an error uploading: \(err?.localizedDescription)")
                 } else {
                     let downloadURL = meta!.downloadURL()
-                    self.dismiss(animated: true, completion: nil)
+                    DataService.instance.sendMediaPullRequest(senderUID: FIRAuth.auth()!.currentUser!.uid, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Coding today was LEGIT!")
+                    print("DownloadURL: \(downloadURL)")
+                    //self.dismiss(animated: true, completion: nil)
                 }
             })
+            self.dismiss(animated: true, completion: nil)
         } else if let snap = _snapData {
             let ref = DataService.instance.imagesStorageRef.child("\(NSUUID().uuidString).jpg")
-            let task = ref.put(snap, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
+            _ = ref.put(snap, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
                 if err != nil {
                     print("Got an error uploading: \(err?.localizedDescription)")
                 } else {
                     let downloadURL = meta!.downloadURL()
-                    self.dismiss(animated: true, completion: nil)
+                    print("DownloadURL: \(downloadURL)")
+                    
                 }
             })
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
